@@ -12,12 +12,11 @@ By default we restrict to a short whitelist of allowed methods that core lightni
       - getnetworkinfo
 
 
-# Installation
+# Setup 
 
-    npm i bps
-
-# Usage
-    
+    git clone https://github.com/coinos/bps
+    cd bps
+    npm i
 
 `cp .env.sample .env` and edit accordingly:
 
@@ -65,11 +64,11 @@ Here's a bash script to get c-lightning to call https://coinos.io/proxy instead 
       exit 8
     fi
 
-To enable it, copy the script to `.lightning/bitcoin-cli` and edit `.lightning/config` to add the `bitcoin-cli` option:
+Copy the script to `.lightning/bitcoin-cli` and edit `.lightning/config` to add the `bitcoin-cli` option:
 
     bitcoin-cli=/root/.lightning/bitcoin-cli
 
-Note: You'll need to have `curl` available. Unfortunately the official c-lightning docker image doesn't include it but it's easy enough to add. Just make a new `Dockerfile`:
+Note: You'll need to have `curl` available. The official c-lightning docker image doesn't include it but it's easy enough to add. Just make a new `Dockerfile`:
 
     FROM elementsproject/lightningd:v22.11.1
     RUN apt update
