@@ -18,12 +18,23 @@ By default we restrict to a short whitelist of allowed methods that core lightni
 
 # Usage
     
+
+`cp .env.sample .env` and edit accordingly:
+
+    RPCUSER=admin1
+    RPCPASS=123
+    RPCWALLET=coinos
+    RPCHOST=localhost
+    RPCPORT=18443
+
+Then
+    
     npm start
 
 
 # Extra
 
-Here is a bash script to get c-lightning to call this endpoint at https://coinos.io/proxy instead of calling bitcoin-cli:
+Here's a bash script to get c-lightning to call https://coinos.io/proxy instead of its native bitcoin-cli:
 
     #!/bin/bash
 
@@ -54,6 +65,6 @@ Here is a bash script to get c-lightning to call this endpoint at https://coinos
       exit 8
     fi
 
-To enable it, copy it to `.lightning/bitcoin-cli` and edit `.lightning/config` to add the `bitcoin-cli` option:
+To enable it, copy the script to `.lightning/bitcoin-cli` and edit `.lightning/config` to add the `bitcoin-cli` option:
 
     bitcoin-cli=/root/.lightning/bitcoin-cli
