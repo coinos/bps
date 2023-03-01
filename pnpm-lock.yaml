@@ -1,12 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
-  bpo: ^1.0.3
+  bpo: ^1.0.4
   dotenv: ^16.0.3
   fastify: ^4.13.0
 
 dependencies:
-  bpo: 1.0.3
+  bpo: 1.0.4
   dotenv: 16.0.3
   fastify: 4.13.0
 
@@ -86,8 +86,8 @@ packages:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
     dev: false
 
-  /bpo/1.0.3:
-    resolution: {integrity: sha512-gCbIG87zcYGMK1FtAEnJfb5wXgA/qi615wXQfIbFL10B+a5/l1GojhpYCIvBja+8qTejleyeXZB6Y4KrCpWNDQ==}
+  /bpo/1.0.4:
+    resolution: {integrity: sha512-QvnoySZSYBefWgQGIcIbjBrkPVXcTslpcoJJXejjlXI47N9qSc0laBE2P74FV3Ss4m96g9o6cGtgm7UOQjG8HQ==}
     dev: false
 
   /buffer/6.0.3:

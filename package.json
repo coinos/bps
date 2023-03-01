@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node --require dotenv/config index.js"
-  }, 
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bpo": "^1.0.3",
+    "bpo": "^1.0.4",
     "dotenv": "^16.0.3",
     "fastify": "^4.13.0"
   },
