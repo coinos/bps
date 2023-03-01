@@ -37,6 +37,8 @@ Here's a bash script to get c-lightning to call https://coinos.io/proxy instead 
 
     #!/bin/bash
 
+    # inspired by https://github.com/lightningd/plugins/issues/112#issuecomment-818536220
+
     ARGS=$(echo $* | sed 's/-[^ ]\+ //')
     OPTS=$(echo $* | tr ' ' '\n' | grep '^-')
     shift $(echo $OPTS | wc -w)
