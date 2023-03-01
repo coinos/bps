@@ -1,0 +1,28 @@
+#!/bin/bash
+
+ARGS=$(echo $* | sed 's/-[^ ]\+ //')
+OPTS=$(echo $* | tr ' ' '\n' | grep '^-')
+shift $(echo $OPTS | wc -w)
+ARGN=$(echo $ARGS | wc -w)
+
+join_by() {
+  local d=${1-} f=${2-}
+  if shift 2; then
+    printf %s "$f" "${@/#/$d}"
+  fi
+}
+
+method=\"$1\"
+shift
+
+if test "$ARGN" = 1; then
+  params=[]
+else
+  params="[\"$(join_by "\",\"" $@)\"]"
+fi
+
+curl -s -f app:3119/proxy -H "content-type: application/json" -d '{ "method": '$method', "params": '$params' }'
+
+if test $? = 22; then
+  exit 8
+fi
