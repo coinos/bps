@@ -68,3 +68,11 @@ Here's a bash script to get c-lightning to call https://coinos.io/proxy instead 
 To enable it, copy the script to `.lightning/bitcoin-cli` and edit `.lightning/config` to add the `bitcoin-cli` option:
 
     bitcoin-cli=/root/.lightning/bitcoin-cli
+
+Note: You'll need to have `curl` available. Unfortunately the official c-lightning docker image doesn't include it but it's easy enough to add. Just make a new `Dockerfile`:
+
+    FROM elementsproject/lightningd:v22.11.1
+    RUN apt update
+    RUN apt install curl -y
+
+And build it with `docker build . -t lightning`
