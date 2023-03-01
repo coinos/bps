@@ -21,7 +21,7 @@ else
   params="[\"$(join_by "\",\"" $@)\"]"
 fi
 
-curl -s -f app:3119/proxy -H "content-type: application/json" -d '{ "method": '$method', "params": '$params' }'
+curl -s -f https://coinos.io/proxy -H "content-type: application/json" -d '{ "method": '$method', "params": '$params' }'
 
 if test $? = 22; then
   exit 8
